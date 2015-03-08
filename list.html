@@ -1,0 +1,22 @@
+<div class="container">
+    <table class = "hoverTable">             
+     <tr>
+        <th>Name</th>
+        <th>Country Code</th>
+        <th>Capital</th>
+        <th>Area (sq km)</th>
+        <th>Population</th>
+        <th>Continent</th>                                         
+    </tr>  
+    <div>                       
+    <tr ng-repeat="country in countries track by $index">
+        <td><a ng-href="#/country/{{country.countryCode}}">{{country.countryName}}</a></td>
+        <td>{{country.countryCode}}</td>
+        <td>{{country.capital}}</td> 
+        <td>{{country.area}}</td>
+        <td>{{country.pop}}</td>
+        <td>{{country.cont}}</td>                                
+    </tr>
+</div>
+    </table>
+</div>
