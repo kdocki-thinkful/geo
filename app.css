@@ -1,0 +1,48 @@
+li{
+	display:inline;
+}
+.error{
+	color: red;
+}
+.flag{
+	height: 100px;
+}
+.map{
+	height: 50%;
+}
+.section{
+	border: black 2px solid;
+	background-color: linen;
+	width: 100%;
+	float: left;
+}
+.section h3{
+	color:maroon;
+}
+#reset{
+	float:right;
+}
+
+.animate-view.ng-enter, .animate-view.ng-leave {
+    transition:1s linear all;
+}
+.animate-view.ng-enter { opacity:0; }
+.animate-view.ng-enter.ng-enter-active { opacity:1; }
+.animate-view.ng-leave { opacity:1; }
+.animate-view.ng-leave.ng-leave-active { opacity:0; }
+
+.hoverTable{
+	width:100%; 
+	border-collapse:collapse; 
+}
+.hoverTable td{ 
+	padding:7px; border:#4e95f4 1px solid;
+}
+/* Define the default color for all the table rows */
+.hoverTable tr{
+	background: #b8d1f3;
+}
+/* Define the hover highlight color for the table row */
+.hoverTable tr:hover {
+      background-color: #ffff99;
+}
