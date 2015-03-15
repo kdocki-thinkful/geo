@@ -1,48 +1,89 @@
 li{
 	display:inline;
 }
-.error{
-	color: red;
+h1{
+	text-align:center;	
+}
+body, html {
+ position:relative; 
+ min-height:100%;
+}
+body {
+    padding: 10px !important;   
+}
+.logo{
+	width:80px;
 }
 .flag{
-	height: 100px;
+	width:49%;
 }
 .map{
-	height: 50%;
+	width:49%;
 }
-.section{
+.country{
 	border: black 2px solid;
 	background-color: linen;
-	width: 100%;
-	float: left;
+	width: 500px;
+	margin-left:auto;
+	margin-right:auto;
 }
-.section h3{
-	color:maroon;
+.navbar, .home{
+	width: 30%;
+	margin-left:auto;
+	margin-right:auto;	
 }
-#reset{
-	float:right;
+.navbar li{
+	border: white 1px solid;
+	background-color: white;
+	font-size: 24px;
+	margin: 2px;
 }
 
+.cTable{
+	width:100%;
+	border: 1px solid #000;
+}
+.cTable td{ 
+	padding:7px; 
+	border:#4e95f4 1px solid;
+}
+.cTable tr{
+	background: #b8d1f3;
+}
+.cTable tr:hover {
+    background-color: #ffff99;
+}
+
+.loading {
+  position:relative;
+  height:100%;
+}
+.loading:before {
+  position:absolute;
+  content:"";
+  left:0;
+  bottom:0;
+  right:0;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,0.9) no-repeat center center;
+  background-image: url('./loading-animation.gif');
+}
+.av-con { position:relative; min-height: 100%; }
+.animate-view.ng-enter,
+.animate-view.ng-leave {
+    transition:1s linear all;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:#eee;
+}
 .animate-view.ng-enter, .animate-view.ng-leave {
     transition:1s linear all;
 }
-.animate-view.ng-enter { opacity:0; }
+.animate-view.ng-enter { opacity:0; z-index:100;}
 .animate-view.ng-enter.ng-enter-active { opacity:1; }
-.animate-view.ng-leave { opacity:1; }
+.animate-view.ng-leave { opacity:1; z-index:99;}
 .animate-view.ng-leave.ng-leave-active { opacity:0; }
-
-.hoverTable{
-	width:100%; 
-	border-collapse:collapse; 
-}
-.hoverTable td{ 
-	padding:7px; border:#4e95f4 1px solid;
-}
-/* Define the default color for all the table rows */
-.hoverTable tr{
-	background: #b8d1f3;
-}
-/* Define the hover highlight color for the table row */
-.hoverTable tr:hover {
-      background-color: #ffff99;
-}
