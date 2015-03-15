@@ -1,5 +1,5 @@
 <div class="container">
-    <table class = "hoverTable">             
+    <table ng-table class = "cTable">             
      <tr>
         <th>Name</th>
         <th>Country Code</th>
@@ -13,8 +13,8 @@
         <td><a ng-href="#/country/{{country.countryCode}}">{{country.countryName}}</a></td>
         <td>{{country.countryCode}}</td>
         <td>{{country.capital}}</td> 
-        <td>{{country.area}}</td>
-        <td>{{country.pop}}</td>
+        <td>{{country.area | number}}</td>
+        <td>{{country.pop | number}}</td>
         <td>{{country.cont}}</td>                                
     </tr>
 </div>
