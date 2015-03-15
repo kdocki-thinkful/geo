@@ -5,20 +5,27 @@
 <title>Countries & Capitals</title> 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script> 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular-route.min.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular-animate.min.js"></script> 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular-animate.min.js"></script>
+<script type="text/javascript" src="http://bazalt-cms.com/assets/ng-table/0.3.0/ng-table.js"></script>
+<script type="text/javascript" src="http://fgnass.github.io/spin.js/spin.min.js"></script>
+<script type="text/javascript" src="angular-spinner.js"></script>
 <script type="text/javascript" src="/app.js"></script>
+<link rel="stylesheet" href="http://bazalt-cms.com/assets/ng-table/0.3.0/ng-table.css" />
 <link rel="stylesheet" href="/app.css">
 </head> 
 <body> 
 <div>
 	<h1>Countries & Capitals</h1>
 </div>
-<div ng-view class="animate-view"></div> 	
+<div class="av-con">
+	<div ng-view class="animate-view"></div>
+	<div ng-if="ajaxLoading" us-spinner="{radius:30, width:8, length:16}" spinner-key="sp1"></div> 
+</div>
 <div class="navbar">
     <ul>
-  		<li><a href="http://localhost:8080/#/">Home</a></li>
-  		<li><a href="http://localhost:8080/#/countries">Browse Countries</a></li>
+  		<li><a href="/#/">Home</a></li>
+  		<li><a href="/#/countries">List</a></li>
     </ul>           	
-</div> 
+</div>
 </body> 
 </html>
