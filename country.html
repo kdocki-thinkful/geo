@@ -1,12 +1,15 @@
 <div class="section">
-	<h1>{{country.countryName}}</h1>	
-	<p>Population of Country: {{country.pop}}
-	<p>Area: {{country.area}}
-	<p>Capital: {{country.capital}}
-	<p>Cap Pop: {{cappop}}		
-	<p>Neighbors: {{neighbors}}
-	<div>
-	<img class="map" src="http://www.geonames.org/img/country/250/{{country.countryCode}}.png" />
-	<img class="flag" src="http://www.geonames.org/flags/x/{{cclc}}.gif" />
+	<div class="country">
+		<h1>{{country.countryName}}</h1>	
+		<p>Population of Country: {{country.pop | number}}
+		<p>Area: {{country.area | number}}
+		<p>Capital: {{country.capital}}
+		<p>Population of Capital: {{cappop | number}}		
+		<p>{{nn}} Neighbors: 
+			<span ng-repeat="n in neighbors"><a ng-href="#/country/{{n.code}}">{{n.name}} | </a></span>
+		<div>
+			<img class="map" src="http://www.geonames.org/img/country/250/{{cc}}.png" />
+			<img class="flag" src="http://www.geonames.org/flags/x/{{cclc}}.gif" />
+		</div>
 	</div>
 </div>
