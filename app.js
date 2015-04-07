@@ -48,8 +48,10 @@ app.factory("dataStore", function Data($rootScope, $http){
 		fetchCountries: function(){
 			if ($rootScope.ajaxLoaded === true)
 				return;
+			console.log('here 0');
 		    return $http({method: 'GET', url: "http://api.geonames.org/countryInfoJSON?username=paulkav1"})
 		    .success(function(data, status, headers, config) {
+					console.log('here 1');
 				for (var i = 0; i < data.geonames.length; i++){
 					setCountry(data.geonames[i].countryName, data.geonames[i].countryCode, data.geonames[i].capital, 
 						data.geonames[i].areaInSqKm, data.geonames[i].population, data.geonames[i].continent);
@@ -57,6 +59,7 @@ app.factory("dataStore", function Data($rootScope, $http){
 				}			
 		    })
 		    .error(function(data, status, headers, config) {
+					console.log('fail');
 				alert('fail');
 				$rootScope.ajaxLoaded = false;			
 		    });
@@ -81,19 +84,19 @@ app.factory("dataStore", function Data($rootScope, $http){
 app.controller('ListCtrl', function($scope, dataStore) {
  	 $scope.currentPage = 1;
  	 $scope.chunk = 20;
+
  	 dataStore.fetchCountries();
-	 $scope.ajaxLoading = true; 	
+	 $scope.ajaxLoading = true;
      setTimeout(function() {
      	$scope.countries = dataStore.getCountries($scope.currentPage, $scope.chunk);
 		$scope.totalItems = dataStore.getLength(); 	 
 	    $scope.numPages = $scope.totalItems / $scope.chunk; 
 		$scope.ajaxLoading = false;	        	
      	$scope.$apply();
-     }, 2000); 
+     }, 2000);  	 	
 
   	 $scope.setPage = function (pageNo) {
-     	$scope.currentPage = pageNo;
- 	 	$rootScope.currentPage = $scope.currentPage;     	
+     	$scope.currentPage = pageNo;	
   	 };
 
      $scope.pageChanged = function() {
@@ -102,6 +105,7 @@ app.controller('ListCtrl', function($scope, dataStore) {
 });
 
 app.controller('HomeCtrl', function($scope) {
+	$scope.home = true;
 });
 
 app.controller('ItemCtrl', function($scope, $http, $routeParams, dataStore) {
