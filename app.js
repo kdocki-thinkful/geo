@@ -48,7 +48,7 @@ app.factory("dataStore", function Data($rootScope, $http){
 		fetchCountries: function(){
 			if ($rootScope.ajaxLoaded === true)
 				return;
-			console.log('here 0');
+
 		    return $http({method: 'GET', url: "http://api.geonames.org/countryInfoJSON?username=paulkav1"})
 		    .success(function(data, status, headers, config) {
 					console.log('here 1');
@@ -60,7 +60,6 @@ app.factory("dataStore", function Data($rootScope, $http){
 		    })
 		    .error(function(data, status, headers, config) {
 					console.log('fail');
-				alert('fail');
 				$rootScope.ajaxLoaded = false;			
 		    });
 		},		
