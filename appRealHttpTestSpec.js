@@ -11,7 +11,8 @@ describe("the data store", function() {
     }));
 
     //
-    // tests below
+    // tests below, not really a unit test though...
+    // more like a funtional test
     //
     it('should fetch countries', function(done){
 
